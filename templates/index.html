@@ -1,0 +1,29 @@
+{%extends 'base/base.html'%}
+{% block title%}
+Taller Ascensores
+{% endblock %}
+{% block navbar %}
+{% endblock %}
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="form-group">
+            <label for="username">Nombre usuario</label>
+            <input class="form-control" type="text" name="username">
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <label for="password">Contraseña</label>
+            <input class="form-control" type="password" name="password">
+        </div>
+    </div>
+    <div class="row">
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="ingresar">
+            </div>
+        </div>
+</form>
+
+{% endblock %}

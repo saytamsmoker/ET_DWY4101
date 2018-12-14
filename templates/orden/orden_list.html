@@ -1,0 +1,44 @@
+{% extends 'base/base.html' %}
+
+{% block contenido %}
+<table class="table table-bordered">
+	<thead>
+		<tr>
+            <td>Folio</td>
+            <td>Cliente</td>
+            <td>Tecnico</td>
+            <td>Fecha</td>
+            <td>Ascensor</td>
+            <td>Fallas</td>
+            <td>Reparaciones</td>
+            <td>Piezas respuestas</td>
+            <td>Recepcionista</td>
+		</tr>>
+
+	</thead>
+	<tbody>
+		{% if ordens %}
+
+		{% for orden in ordens %}
+		
+		<tr>
+                <td>{{ orden.folio }}</td>
+                <td>{{ orden.fk_cli }}</td>
+                <td>{{ orden.fk_tec }}</td>
+                <td>{{ orden.fecha }}</td>
+                <td>{{ orden.fk_asc }}</td>
+                <td>{{ orden.fails }}</td>
+                <td>{{ orden.rep }}</td>
+                <td>{{ orden.pi_ch }}</td>
+                <td>{{ orden.nom_rec }}</td>
+            </tr>>
+            {% endfor %}
+            {% else %}
+            <h1> No hay registros de Ordenes</h1>
+
+		
+		{% endif %}
+	</tbody>
+</table>
+
+{% endblock %}
